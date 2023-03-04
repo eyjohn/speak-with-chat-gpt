@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "target": "es6",
+        "module": "commonjs",
+        "lib": [
+            "es2022",
+            "dom",
+            "dom.iterable"
+        ],
+        "sourceMap": true,
+        "outDir": "dist",
+        "rootDir": "src",
+        "noEmitOnError": true,
+        "esModuleInterop": true,
+    }
+}

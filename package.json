@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest",
     "build": "webpack",
+    "sign": "node sign-extension.js",
     "watch": "webpack --watch",
     "test:watch": "jest --watchAll"
   },
@@ -16,6 +17,7 @@
     "@types/chrome": "^0.0.217",
     "@types/jest": "^29.4.0",
     "copy-webpack-plugin": "^11.0.0",
+    "crx": "^5.0.1",
     "jest": "^29.4.3",
     "ts-jest": "^29.0.5",
     "ts-loader": "^9.4.2",

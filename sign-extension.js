@@ -13,13 +13,13 @@ async function main() {
     const extensionPath = path.join(__dirname, 'dist');
     const outputPath = path.join(__dirname, 'dist', 'extension.crx');
 
-    crx.load(extensionPath)
-        .then(() => crx.pack())
-        .then(crxBuffer => {
-            fs.writeFileSync(outputPath, crxBuffer);
-            console.log('Signed .crx file created at:', outputPath);
-        })
-        .catch(err => console.error('Signing error:', err));
+    try {
+        const crxBuffer = await crx.load(extensionPath).then(() => crx.pack());
+        fs.writeFileSync(outputPath, crxBuffer);
+        console.log('Signed .crx file created at:', outputPath);
+    } catch (err) {
+        console.error('Signing error:', err);
+    }
 }
 
 main().catch(err => console.error(err));

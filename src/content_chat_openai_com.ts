@@ -1,7 +1,5 @@
-import { ViewBinder } from "./view_binder";
-
 function initiateView(view: HTMLElement) {
-    const viewBinder = new ViewBinder(view);
+    // TODO
 }
 
 function main() {

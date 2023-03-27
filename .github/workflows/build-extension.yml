@@ -1,4 +1,4 @@
-name: Build and Sign Extension
+name: Build Extension
 
 on:
   push:
@@ -24,13 +24,8 @@ jobs:
       - name: Build extension
         run: npm run build
 
-      - name: Sign extension
-        run: npm run sign
-        env:
-          CHROME_EXTENSION_SIGNING_PRIVATE_KEY: ${{ secrets.CHROME_EXTENSION_SIGNING_PRIVATE_KEY }}
-
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: signed_extension
-          path: dist/extension.crx
+          name: extension
+          path: dist/

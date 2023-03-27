@@ -1,13 +1,17 @@
 {
-   "name": "speak-with-chat-gpt",
-   "description": "A Chrome extension enabling voice interaction with ChatGPT. Speak into your device's microphone and receive ChatGPT's responses, fostering a natural conversational experience.",
-   "version": "1.0.0",
-   "manifest_version": 3,
-   "permissions": [],
-   "content_scripts": [
-      {
-        "matches": ["https://chat.openai.com/*"],
-        "js": ["content_chat_openai_com.js"]
-      }
-    ]
+  "name": "speak-with-chat-gpt",
+  "description": "A Chrome extension enabling voice interaction with ChatGPT. Speak into your device's microphone and receive ChatGPT's responses, fostering a natural conversational experience.",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.openai.com/*"
+      ],
+      "js": [
+        "content_chat_openai_com.js"
+      ]
+    }
+  ]
 }

@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-and-sign:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,4 +28,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: extension
-          path: dist/
+          path: dist/extension.zip

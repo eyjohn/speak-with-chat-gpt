@@ -1,6 +1,8 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const ZipPlugin = require('zip-webpack-plugin');
+const { ImageTransformWebpackPlugin } = require("image-transform-webpack-plugin");
+const { ImageTransformFormat } = require("image-transform-plugin");
 
 module.exports = {
     mode: "production",
@@ -27,6 +29,26 @@ module.exports = {
     plugins: [
         new CopyPlugin({
             patterns: [{ from: "public", to: "." }]
+        }),
+        new ImageTransformWebpackPlugin({
+            input: './src/icon.svg',
+            output: [
+                {
+                    file: 'icon16.png',
+                    format: ImageTransformFormat.PNG,
+                    width: 16,
+                },
+                {
+                    file: 'icon48.png',
+                    format: ImageTransformFormat.PNG,
+                    width: 48,
+                },
+                {
+                    file: 'icon128.png',
+                    format: ImageTransformFormat.PNG,
+                    width: 128,
+                },
+            ]
         }),
         new ZipPlugin({
             filename: 'extension.zip',

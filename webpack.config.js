@@ -1,8 +1,9 @@
 const path = require('path');
-const CopyPlugin = require('copy-webpack-plugin');
 const ZipPlugin = require('zip-webpack-plugin');
 const { ImageTransformWebpackPlugin } = require("image-transform-webpack-plugin");
 const { ImageTransformFormat } = require("image-transform-plugin");
+const ChromeExtensionManifest = require('chrome-extension-manifest-webpack-plugin');
+const packageJson = require('./package.json');
 
 module.exports = {
     mode: "production",
@@ -27,8 +28,12 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-        new CopyPlugin({
-            patterns: [{ from: "public", to: "." }]
+        new ChromeExtensionManifest({
+            inputFile: './src/manifest.json',
+            outputFile: './dist/manifest.json',
+            props: {
+                version: packageJson.version,
+            }
         }),
         new ImageTransformWebpackPlugin({
             input: './src/icon.svg',

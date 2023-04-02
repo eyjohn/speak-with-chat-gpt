@@ -2,7 +2,6 @@
   "manifest_version": 3,
   "name": "Speak with ChatGPT",
   "description": "Engage in voice-based ChatGPT interaction using your device's microphone for a seamless conversational experience.",
-  "version": "0.9.0",
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",

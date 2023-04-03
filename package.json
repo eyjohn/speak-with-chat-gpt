@@ -1,6 +1,6 @@
 {
   "name": "speak-with-chat-gpt",
-  "version": "0.9.1",
+  "version": "0.10.0",
   "description": "A Chrome extension enabling voice interaction with ChatGPT. Speak into your device's microphone and receive ChatGPT's responses, fostering a natural conversational experience.",
   "scripts": {
     "test": "jest",

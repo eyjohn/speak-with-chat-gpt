@@ -1,4 +1,4 @@
-name: Release
+name: Bump Version
 
 on:
   push:
@@ -11,7 +11,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  release:
+  bump:
     runs-on: ubuntu-latest
 
     steps:
